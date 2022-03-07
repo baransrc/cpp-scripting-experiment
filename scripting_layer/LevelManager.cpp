@@ -1,7 +1,7 @@
 #include "scripting_pch.h"
 #include "LevelManager.h"
 
-#define GENERATE_SERIALIZED_FIELD(v) new SerializedField(NAME_OF(v), &v, typeid(v).name())
+#define GENERATE_SERIALIZED_FIELD(v) new SerializedField(NAME_OF(v), &std::any(v), typeid(v).name())
 
 Gameplay::LevelManager::LevelManager(Entity* new_owner)
 	: Script(owner)

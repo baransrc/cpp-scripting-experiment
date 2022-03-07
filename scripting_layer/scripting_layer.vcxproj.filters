@@ -19,13 +19,13 @@
     <Filter Include="Util">
       <UniqueIdentifier>{e2eef7e9-3ee1-4ab3-b4be-2b05d60f5a4c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Util\Generated">
+      <UniqueIdentifier>{3e3855b5-ec0e-44a5-a8d2-3a824e9ab6f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PlayerController.h">
       <Filter>Scripts</Filter>
-    </ClInclude>
-    <ClInclude Include="ScriptFactory.h">
-      <Filter>Util</Filter>
     </ClInclude>
     <ClInclude Include="scripting_framework.h">
       <Filter>Util</Filter>
@@ -36,6 +36,9 @@
     <ClInclude Include="LevelManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ScriptFactory.h">
+      <Filter>Util\Generated</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PlayerController.cpp">
@@ -44,11 +47,11 @@
     <ClCompile Include="scripting_pch.cpp">
       <Filter>Util</Filter>
     </ClCompile>
-    <ClCompile Include="ScriptFactory.cpp">
-      <Filter>Util</Filter>
-    </ClCompile>
     <ClCompile Include="LevelManager.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptFactory.cpp">
+      <Filter>Util\Generated</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
