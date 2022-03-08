@@ -135,7 +135,7 @@
       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>call $(SolutionDir)code_generation\generate_code.bat</Command>
+      <Command>call $(SolutionDir)\code_generation\generate_code.bat;</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
