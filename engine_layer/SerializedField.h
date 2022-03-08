@@ -23,3 +23,4 @@ private:
 	std::string _former_name;
 	std::any* _reference;
 };
+

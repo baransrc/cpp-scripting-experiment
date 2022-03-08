@@ -15,11 +15,11 @@ void Gameplay::LevelManager::LevelUp(int new_level)
 
 	const char* deneme = "host";
 
-	SerializedField* serialized_field_level = GENERATE_SERIALIZED_FIELD(_level);
+	/*SerializedField* serialized_field_level = GENERATE_SERIALIZED_FIELD(_level);*/
 
-	serialized_field_level->Print();
+	/*serialized_field_level->Print();*/
 
 	std::cout << "Leveled up, new level is: " << _level << std::endl;
 
-	serialized_field_level->Print();
+	//serialized_field_level->Print();
 }

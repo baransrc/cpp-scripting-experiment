@@ -31,9 +31,11 @@ void CallDLLByExplicitLinking()
     Gameplay::Entity* entity = new Gameplay::Entity();
     Gameplay::Script* player_controller = instantiate_script(entity, "PlayerController");
     Gameplay::Script* level_manager = instantiate_script(entity, "LevelManager");
+    Gameplay::Script* win_condition_manager = instantiate_script(entity, "WinConditionManager");
     
     entity->AddScript(level_manager);
     entity->AddScript(player_controller);
+    entity->AddScript(win_condition_manager);
 
     entity->Start();
     entity->Update();
