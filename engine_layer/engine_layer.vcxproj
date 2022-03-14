@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Globals.h" />
+    <ClInclude Include="ISerializable.h" />
     <ClInclude Include="Script.h" />
     <ClInclude Include="SerializedField.h" />
   </ItemGroup>

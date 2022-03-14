@@ -47,5 +47,8 @@
     <ClCompile Include="WinConditionManager.cpp">
       <Filter>Scripts</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedSerialization.cpp">
+      <Filter>Util\Generated</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -166,6 +166,7 @@
     <ClInclude Include="WinConditionManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GeneratedSerialization.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="ScriptFactory.cpp" />

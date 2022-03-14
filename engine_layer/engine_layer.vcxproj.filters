@@ -39,5 +39,8 @@
     <ClInclude Include="SerializedField.h">
       <Filter>Serialization</Filter>
     </ClInclude>
+    <ClInclude Include="ISerializable.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
