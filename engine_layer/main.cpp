@@ -5,11 +5,45 @@
 
 typedef Gameplay::Script* (__cdecl* InstantiateScript)(Gameplay::Entity*, const std::string&);
 
+void PrintDllVersion(const wchar_t* dll_name)
+{
+    LPDWORD lpdword_handle_not_used = NULL;
+    DWORD file_info_size = GetFileVersionInfoSize(dll_name, lpdword_handle_not_used);
+    DWORD dw_handle_not_used = 0;
+    
+    LPVOID file_info_buffer = malloc(file_info_size);
+
+    if (GetFileVersionInfo(dll_name, dw_handle_not_used, file_info_size, file_info_buffer))
+    {
+        LPBYTE fixed_version_info = NULL;
+        UINT fixed_version_size = 0;
+
+        if (VerQueryValue(file_info_buffer, L"\\", (VOID FAR * FAR*) &fixed_version_info, &fixed_version_size))
+        {
+            if (fixed_version_size)
+            {
+                VS_FIXEDFILEINFO* version_info = (VS_FIXEDFILEINFO*)fixed_version_info;
+
+                printf("File Version: %d.%d.%d.%d\n",
+                    (version_info->dwFileVersionMS >> 16) & 0xffff,
+                    (version_info->dwFileVersionMS >> 0) & 0xffff,
+                    (version_info->dwFileVersionLS >> 16) & 0xffff,
+                    (version_info->dwFileVersionLS >> 0) & 0xffff
+                );
+            }
+        }
+    }
+
+    free(file_info_buffer);
+}
+
 void CallDLLByExplicitLinking()
 {
     LPCWSTR dll_file_name = L"scripting_layer.dll";
 
     /*std::cout << "DLL VERSION: " << GetDllVersion(dll_file_name) << std::endl;*/
+
+    PrintDllVersion(dll_file_name);
 
     HMODULE dll = LoadLibrary(dll_file_name);
 

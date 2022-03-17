@@ -10,6 +10,9 @@
     <Filter Include="Util\Generated">
       <UniqueIdentifier>{3e3855b5-ec0e-44a5-a8d2-3a824e9ab6f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{9188f096-2a8f-4200-a410-6430d213eda3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PlayerController.h">
@@ -30,7 +33,9 @@
     <ClInclude Include="WinConditionManager.h">
       <Filter>Scripts</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PlayerController.cpp">
@@ -53,6 +58,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="scripting_layer.rc" />
+    <ResourceCompile Include="scripting_layer.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
