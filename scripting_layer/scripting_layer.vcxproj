@@ -160,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="PlayerController.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="ScriptFactory.h" />
     <ClInclude Include="scripting_framework.h" />
     <ClInclude Include="scripting_pch.h" />
@@ -177,6 +178,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="WinConditionManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="scripting_layer.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

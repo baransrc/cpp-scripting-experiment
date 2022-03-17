@@ -30,6 +30,7 @@
     <ClInclude Include="WinConditionManager.h">
       <Filter>Scripts</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PlayerController.cpp">
@@ -50,5 +51,8 @@
     <ClCompile Include="GeneratedSerialization.cpp">
       <Filter>Util\Generated</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="scripting_layer.rc" />
   </ItemGroup>
 </Project>
