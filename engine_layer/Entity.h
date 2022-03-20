@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <string>
 #include <typeinfo>
 #include "Globals.h"
 
@@ -23,8 +24,13 @@ public:
 	template <class SCRIPT_T> void RemoveScript();
 	void RemoveScript(Script* script);
 	template <class SCRIPT_T> SCRIPT_T* GetScript() const;
+	Script* GetScript(std::string name);
 	void IncrementVariable();
 	int GetVariable() const { return some_variable; };
+
+	std::vector<Script*>& GetScripts() { return scripts; }
+
+	void RemoveAllScripts();
 
 private:
 	std::vector<Script*> scripts;

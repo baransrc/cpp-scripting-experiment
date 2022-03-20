@@ -69,7 +69,30 @@ void Gameplay::Entity::RemoveScript(Script* script)
 	}
 }
 
+Gameplay::Script* Gameplay::Entity::GetScript(std::string name)
+{
+	for (Script* script : scripts)
+	{
+		if (script->GetName() == name)
+		{
+			return script;
+		}
+	}
+
+	return nullptr;
+}
+
 void Gameplay::Entity::IncrementVariable()
 {
 	++some_variable;
+}
+
+void Gameplay::Entity::RemoveAllScripts()
+{
+	for (Script* script : scripts)
+	{
+		delete script;
+	}
+
+	scripts.clear();
 }

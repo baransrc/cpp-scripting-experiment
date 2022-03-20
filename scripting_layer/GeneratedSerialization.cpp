@@ -32,12 +32,21 @@ void Gameplay::PlayerController::DeserializeFrom(std::unordered_map<std::string,
 		}
 	}
 
-	if(serialized_fields.find("_vector_var") != serialized_fields.end())
+	if(serialized_fields.find("_entity_var") != serialized_fields.end())
 	{
-		const SerializedField& _vector_var_sf = serialized_fields["_vector_var"];
-		if (_vector_var_sf.type_name == "std::vector<Script*>")
+		const SerializedField& _entity_var_sf = serialized_fields["_entity_var"];
+		if (_entity_var_sf.type_name == "Entity*")
 		{
-			_vector_var = std::any_cast<std::vector<Script*>>(_vector_var_sf.copy);
+			_entity_var = std::any_cast<Entity*>(_entity_var_sf.copy);
+		}
+	}
+
+	if(serialized_fields.find("_some_struct_var") != serialized_fields.end())
+	{
+		const SerializedField& _some_struct_var_sf = serialized_fields["_some_struct_var"];
+		if (_some_struct_var_sf.type_name == "SomeStruct")
+		{
+			_some_struct_var = std::any_cast<SomeStruct>(_some_struct_var_sf.copy);
 		}
 	}
 }
@@ -48,7 +57,9 @@ void Gameplay::PlayerController::SerializeTo(std::unordered_map<std::string, Ser
 
 	serialized_fields["_integer_var"] = SerializedField(std::string("_integer_var"), std::make_any<int>(_integer_var), std::string("int"));
 
-	serialized_fields["_vector_var"] = SerializedField(std::string("_vector_var"), std::make_any<std::vector<Script*>>(_vector_var), std::string("std::vector<Script*>"));
+	serialized_fields["_entity_var"] = SerializedField(std::string("_entity_var"), std::make_any<Entity*>(_entity_var), std::string("Entity*"));
+
+	serialized_fields["_some_struct_var"] = SerializedField(std::string("_some_struct_var"), std::make_any<SomeStruct>(_some_struct_var), std::string("SomeStruct"));
 }
 
 void Gameplay::WinConditionManager::DeserializeFrom(std::unordered_map<std::string, SerializedField>& serialized_fields)

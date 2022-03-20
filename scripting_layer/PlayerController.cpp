@@ -14,22 +14,22 @@ void Gameplay::PlayerController::Start()
 {
 	std::cout << "PlayerController::Start" << std::endl;
 
-	_vector_var.push_back(owner->GetScript<LevelManager>());
-	_vector_var.push_back(owner->GetScript<WinConditionManager>());
+	_entity_var = owner;
+
+	_some_struct_var = { 69, "WOWOWOW" };
 }
 
 void Gameplay::PlayerController::Update()
 {
 	owner->IncrementVariable();
 
-	std::cout << "PlayerController::Update" << std::endl;
+	std::cout << "This is working" << std::endl;
 	
 	std::cout << "Entity::some_variable is now: " << owner->GetVariable() << std::endl;
 
 	owner->GetScript<LevelManager>()->LevelUp(69);
 
-	for (Script* script : _vector_var)
-	{
-		std::cout << script->GetName().c_str() << std::endl;
-	}
+	std::cout << "Calling this from serialized var: " << _entity_var->GetScripts()[2]->GetName().c_str() << std::endl;
+
+	std::cout << "Serialized Struct: " << _some_struct_var.string_field << " " << _some_struct_var.int_field << std::endl;
 }

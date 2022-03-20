@@ -10,5 +10,5 @@ Gameplay::WinConditionManager::WinConditionManager(Entity* owner)
 
 void Gameplay::WinConditionManager::Update()
 {
-	std::cout << "WinConditionManager::Update" << std::endl;
+	std::cout << "WE ALL WINNERS MY DUDES" << std::endl;
 }
